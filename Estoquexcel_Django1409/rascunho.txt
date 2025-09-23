@@ -1,0 +1,46 @@
+python manage.py runserver 8001
+python manage.py runserver 
+python manage.py runserver 8001
+python3 -m venv venv
+source venv/bin/activate
+deactivate
+
+
+python manage.py makemigrations core
+python manage.py migrate
+============================
+Primeiro, crie uma pasta para guardar o arquivo da fixture. No terminal, dentro da pasta core, execute o comando:
+
+Bash
+
+mkdir core/fixtures
+Agora, use o comando do Django dumpdata para criar a fixture. Este comando vai extrair todos os dados dos seus modelos (Estoque e Produto) e salvar no arquivo que criamos.
+
+Bash
+
+python manage.py dumpdata core --indent 2 > core/fixtures/initial_data.json
+O comando dumpdata lê o seu banco de dados, e o > core/fixtures/initial_data.json direciona a saída para o arquivo que você criou. O parâmetro --indent 2 deixa o arquivo mais fácil de ler.
+
+Depois de rodar o comando, você verá um novo arquivo initial_data.json dentro da pasta core/fixtures. Você pode abrir este arquivo e ver todos os seus estoques e produtos em formato de texto.
+
+Carregar o Estoque em Outra Máquina
+Agora, quando você for para uma nova máquina, o processo será o seguinte:
+
+Copie toda a pasta do projeto (com o arquivo initial_data.json dentro).
+
+Instale as dependências com pip install -r requirements.txt (se você tem um arquivo de requisitos).
+
+Crie as tabelas do banco de dados na nova máquina:
+
+Bash
+
+python manage.py makemigrations core
+python manage.py migrate
+Por fim, use o comando loaddata para carregar os dados da sua fixture:
+
+Bash
+
+python manage.py loaddata core/fixtures/initial_data.json
+Pronto! Seu projeto e seus dados estarão intactos e prontos para serem usados na nova máquina.
+
+Você quer tentar criar sua primeira fixture agora?

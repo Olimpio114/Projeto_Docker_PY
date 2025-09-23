@@ -1,0 +1,45 @@
+services:
+  web:
+    # O serviço web é a sua aplicação Django.
+    build: .
+    # Mapeia a porta 8000 do seu computador para a porta 8000 dentro do contêiner.
+    # Isso permite que você acesse a aplicação via http://localhost:8000.
+    ports:
+      - "8000:8000"
+    # Cria um volume que sincroniza o diretório local com o diretório /app no contêiner.
+    # Alterações no código-fonte são refletidas instantaneamente, sem precisar reconstruir a imagem.
+    volumes:
+      - .:/app
+    # Sobrescreve o comando de execução padrão para iniciar o servidor Django.
+    command: python manage.py runserver 0.0.0.0:8000
+    # Garante que o serviço 'web' só inicie após o serviço 'db' estar pronto.
+    depends_on:
+      db:
+        condition: service_healthy
+            
+        
+    # Define as variáveis de ambiente que serão acessíveis dentro do contêiner 'web'.
+    environment:
+      # Informa ao Django onde encontrar o arquivo de configurações do projeto.
+      - DJANGO_SETTINGS_MODULE=src.filho_docker.settings
+      # Variáveis para a conexão com o banco de dados.
+      - DB_NAME=postgres
+      - DB_USER=postgres
+      - DB_PASSWORD=${DB_PASSWORD}  #AGORA MINHA SENHA ESTÁ NO .ENV
+      - DB_HOST=db
+  db:
+    # O serviço 'db' é o seu banco de dados PostgreSQL.
+    # Usa a imagem oficial do Docker Hub para o PostgreSQL.
+    image: postgres:16
+    # Define as variáveis de ambiente para a configuração do banco de dados.
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=${DB_PASSWORD}  #AGORA MINHA SENHA ESTÁ NO .ENV
+
+    healthcheck: # <--- Adicione esta seção
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s

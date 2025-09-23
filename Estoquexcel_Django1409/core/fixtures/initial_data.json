@@ -1,0 +1,89 @@
+[
+{
+  "model": "core.estoque",
+  "pk": 2,
+  "fields": {
+    "nome": "Reforma Casa",
+    "data_criacao": "2025-09-14T22:42:21.992Z"
+  }
+},
+{
+  "model": "core.estoque",
+  "pk": 3,
+  "fields": {
+    "nome": "Laticínios",
+    "data_criacao": "2025-09-14T22:59:48.178Z"
+  }
+},
+{
+  "model": "core.estoque",
+  "pk": 4,
+  "fields": {
+    "nome": "Higiene",
+    "data_criacao": "2025-09-14T23:00:14.521Z"
+  }
+},
+{
+  "model": "core.estoque",
+  "pk": 5,
+  "fields": {
+    "nome": "Alimentos",
+    "data_criacao": "2025-09-14T23:15:39.063Z"
+  }
+},
+{
+  "model": "core.produto",
+  "pk": 1,
+  "fields": {
+    "estoque": 3,
+    "nome": "CArne moida",
+    "quantidade": 3,
+    "preco_estimado": "25.00",
+    "data_ultima_atualizacao": "2025-09-15T01:06:38.725Z"
+  }
+},
+{
+  "model": "core.produto",
+  "pk": 2,
+  "fields": {
+    "estoque": 3,
+    "nome": "Coxinha da asa",
+    "quantidade": 2,
+    "preco_estimado": "50.00",
+    "data_ultima_atualizacao": "2025-09-15T01:07:23.814Z"
+  }
+},
+{
+  "model": "core.produto",
+  "pk": 3,
+  "fields": {
+    "estoque": 4,
+    "nome": "Sabonete",
+    "quantidade": 7,
+    "preco_estimado": "4.00",
+    "data_ultima_atualizacao": "2025-09-15T01:08:30.507Z"
+  }
+},
+{
+  "model": "core.produto",
+  "pk": 5,
+  "fields": {
+    "estoque": 2,
+    "nome": "Limpar armarios",
+    "quantidade": 5,
+    "preco_estimado": "10.00",
+    "data_ultima_atualizacao": "2025-09-15T02:35:25.938Z"
+  }
+},
+{
+  "model": "core.produto",
+  "pk": 6,
+  "fields": {
+    "estoque": 2,
+    "nome": "lampadas",
+    "quantidade": 8,
+    "preco_estimado": "100.00",
+    "data_ultima_atualizacao": "2025-09-15T02:36:27.162Z"
+  }
+}
+]

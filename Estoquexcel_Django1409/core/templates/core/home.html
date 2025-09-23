@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta charset="UTF-8">
+    <title>Menu Principal</title>
+</head>
+<body>
+     
+  <h1> Escolha um menu</h1>
+  <hr>
+    <a href="{% url 'listar_estoques' %}">Listar estoques existentes</a><br>
+    <a href="{% url 'criar_estoque' %}">Gerar novo estoque</a><br>
+    <a href="{% url 'gerar_relatorio_geral' %}">Relatório geral</a>
+</body>
+</html>

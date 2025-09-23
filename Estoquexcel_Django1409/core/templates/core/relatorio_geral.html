@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta charset="UTF-8">
+    <title>Relatório Geral</title>
+</head>
+<body>
+    <a href="{% url 'home' %}">Voltar ao Menu Inicial</a>
+    <h1>Relatório Geral</h1>
+    <hr>
+    <a href="{% url 'exportar_relatorio' %}" style="color: green; font-weight: bold;">[Exportar Relatório para Arquivos]</a>
+    
+    
+    <pre>{{ conteudo_txt }}</pre>
+</body>
+</html>

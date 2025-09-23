@@ -1,0 +1,25 @@
+RELATÓRIO GERAL DE ESTOQUES
+
+----------------------------------------
+Estoque: Alimentos
+Este estoque não contém produtos.
+----------------------------------------
+Estoque: Higiene
+Valor total do Estoque: R$ 4.00
+----------------------------------------
+Produtos:
+  - Sabonete: 7 unid. | R$ 4.00 | Última Atualização: 15/09/2025 01:08
+----------------------------------------
+Estoque: Laticínios
+Valor total do Estoque: R$ 75.00
+----------------------------------------
+Produtos:
+  - CArne moida: 3 unid. | R$ 25.00 | Última Atualização: 15/09/2025 01:06
+  - Coxinha da asa: 2 unid. | R$ 50.00 | Última Atualização: 15/09/2025 01:07
+----------------------------------------
+Estoque: Reforma Casa
+Valor total do Estoque: R$ 110.00
+----------------------------------------
+Produtos:
+  - Limpar armarios: 5 unid. | R$ 10.00 | Última Atualização: 15/09/2025 02:35
+  - lampadas: 8 unid. | R$ 100.00 | Última Atualização: 15/09/2025 02:36
