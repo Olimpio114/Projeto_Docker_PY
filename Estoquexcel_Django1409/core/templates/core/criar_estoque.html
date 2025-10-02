@@ -2,20 +2,46 @@
 <html lang="pt-br">
 <head>
     {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <meta charset="UTF-8">
     <title>Criar Novo Estoque</title>
 </head>
 <body>
-    <a href="{% url 'home' %}">Voltar ao Menu Inicial</a>
-    <h1>Gerar Novo Estoque</h1>
-    <hr>
+    <header>
+        <h1>Gerar Novo Estoque</h1>
+    </header>
+    
+    <main class="form-page-container">
+        
+        <div class="menu-action-bar">
+            <a href="{% url 'home' %}" class="back-button">← Voltar ao Menu Inicial</a>
+        </div>
+        
+        <hr>
 
-    <form action="{% url 'criar_estoque' %}" method="post">
-        {% csrf_token %}
-        <label for="nome_estoque">Nome do Estoque:</label>
-        <input type="text" id="nome_estoque" name="nome_estoque" required>
-        <button type="submit">Criar Estoque</button>
-    </form>
+        <div class="form-container">
+            
+            <h2>Preencha os dados</h2>
+
+            <form action="{% url 'criar_estoque' %}" method="post" class="estoque-form">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <label for="nome_estoque">Nome do Estoque:</label>
+                    <input type="text" id="nome_estoque" name="nome_estoque" required class="form-input">
+                </div>
+                
+                <button type="submit" class="primary-action submit-button">
+                    Criar Estoque
+                </button>
+            </form>
+        </div>
+        
+    </main>
+
+    <footer>
+        <p>&copy; Sua Aplicação Django</p>
+    </footer>
 </body>
 </html>

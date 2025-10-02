@@ -2,24 +2,69 @@ RELATÓRIO GERAL DE ESTOQUES
 
 ----------------------------------------
 Estoque: Alimentos
+Valor total do Estoque: R$ 148.00
+----------------------------------------
+Produtos:
+  - arroz: 2 unid. | R$ 5.00 | Última Atualização: 18/09/2025 01:02
+  - açúcar: 1 unid. | R$ 7.00 | Última Atualização: 18/09/2025 01:05
+  - bolacha choc mabel: 1 unid. | R$ 7.00 | Última Atualização: 18/09/2025 01:03
+  - café: 2 unid. | R$ 62.00 | Última Atualização: 24/09/2025 01:18
+  - feijão: 2 unid. | R$ 8.00 | Última Atualização: 23/09/2025 02:21
+  - filtro café: 1 unid. | R$ 4.00 | Última Atualização: 23/09/2025 02:21
+  - guardanapo: 5 unid. | R$ 2.00 | Última Atualização: 23/09/2025 02:19
+  - leite Gaby: 0 unid. | R$ 28.00 | Última Atualização: 23/09/2025 14:22
+  - macarrão: 1 unid. | R$ 6.00 | Última Atualização: 18/09/2025 01:06
+  - papel toalha: 1 unid. | R$ 7.00 | Última Atualização: 23/09/2025 02:19
+  - sal: 1 unid. | R$ 12.00 | Última Atualização: 23/09/2025 02:22
+  - suco grande: 1 unid. | R$ 0.00 | Última Atualização: 23/09/2025 02:25
+----------------------------------------
+Estoque: Comer
 Este estoque não contém produtos.
 ----------------------------------------
 Estoque: Higiene
-Valor total do Estoque: R$ 4.00
+Valor total do Estoque: R$ 28.00
 ----------------------------------------
 Produtos:
-  - Sabonete: 7 unid. | R$ 4.00 | Última Atualização: 15/09/2025 01:08
+  - bom bril: 1 unid. | R$ 4.00 | Última Atualização: 23/09/2025 02:09
+  - detergente pia: 3 unid. | R$ 3.00 | Última Atualização: 23/09/2025 02:10
+  - sabonete: 6 unid. | R$ 4.00 | Última Atualização: 24/09/2025 00:42
+  - sabonete líquido: 1 unid. | R$ 0.00 | Última Atualização: 23/09/2025 14:39
+  - sabão barra: 3 unid. | R$ 9.00 | Última Atualização: 23/09/2025 02:09
+  - álcool: 1 unid. | R$ 8.00 | Última Atualização: 23/09/2025 02:08
 ----------------------------------------
 Estoque: Laticínios
-Valor total do Estoque: R$ 75.00
+Valor total do Estoque: R$ 173.00
 ----------------------------------------
 Produtos:
-  - CArne moida: 3 unid. | R$ 25.00 | Última Atualização: 15/09/2025 01:06
   - Coxinha da asa: 2 unid. | R$ 50.00 | Última Atualização: 15/09/2025 01:07
+  - carne moída: 3 unid. | R$ 30.00 | Última Atualização: 23/09/2025 02:31
+  - leite: 1 unid. | R$ 12.00 | Última Atualização: 23/09/2025 02:30
+  - ovos cx: 2 unid. | R$ 20.00 | Última Atualização: 23/09/2025 14:25
+  - qeueijo zero: 1 unid. | R$ 25.00 | Última Atualização: 23/09/2025 14:26
+  - requeijão cremoso: 2 unid. | R$ 13.00 | Última Atualização: 23/09/2025 14:24
+  - suco grante: 1 unid. | R$ 8.00 | Última Atualização: 23/09/2025 14:25
+  - suco pq Gaby: 3 unid. | R$ 15.00 | Última Atualização: 24/09/2025 01:16
 ----------------------------------------
-Estoque: Reforma Casa
-Valor total do Estoque: R$ 110.00
+Estoque: Manutenção casa
+Valor total do Estoque: R$ 2000.00
 ----------------------------------------
 Produtos:
-  - Limpar armarios: 5 unid. | R$ 10.00 | Última Atualização: 15/09/2025 02:35
-  - lampadas: 8 unid. | R$ 100.00 | Última Atualização: 15/09/2025 02:36
+  - Comprar armário sala: 1 unid. | R$ 2000.00 | Última Atualização: 23/09/2025 00:48
+  - Limpar armários: 0 unid. | R$ 0.00 | Última Atualização: 23/09/2025 00:42
+  - Limpar portas: 0 unid. | R$ 0.00 | Última Atualização: 23/09/2025 00:42
+  - Ralo do banheiro: 0 unid. | R$ 0.00 | Última Atualização: 23/09/2025 00:42
+  - Vender bicicleta: 0 unid. | R$ 0.00 | Última Atualização: 23/09/2025 00:48
+  - comprar escrevaninha: 0 unid. | R$ 0.00 | Última Atualização: 23/09/2025 00:48
+----------------------------------------
+Estoque: Padaria
+Valor total do Estoque: R$ 48.00
+----------------------------------------
+Produtos:
+  - bisnaguinha: 1 unid. | R$ 8.00 | Última Atualização: 23/09/2025 14:23
+  - bolacha choc zero: 1 unid. | R$ 8.00 | Última Atualização: 23/09/2025 02:27
+  - bolo wilk bold pr: 2 unid. | R$ 7.00 | Última Atualização: 23/09/2025 02:26
+  - ciabata: 2 unid. | R$ 8.00 | Última Atualização: 23/09/2025 14:23
+  - club social: 1 unid. | R$ 6.00 | Última Atualização: 23/09/2025 02:26
+  - mini óreon: 5 unid. | R$ 4.00 | Última Atualização: 23/09/2025 14:24
+  - pão de forma: 1 unid. | R$ 6.00 | Última Atualização: 23/09/2025 14:23
+  - pão sal: 2 unid. | R$ 1.00 | Última Atualização: 23/09/2025 02:28

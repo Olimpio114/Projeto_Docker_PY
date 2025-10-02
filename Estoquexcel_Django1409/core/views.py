@@ -173,7 +173,7 @@ def exportar_relatorio(request):
                 'Estoque': estoque.nome,
                 'Produto': produto.nome,
                 'Quantidade': produto.quantidade,
-                'Preco Estimado': produto.preco_estimado,
+                'Preço Estimado': produto.preco_estimado,
                 'Data de Atualizacao': produto.data_ultima_atualizacao.strftime('%d/%m/%Y %H:%M')
             })
     

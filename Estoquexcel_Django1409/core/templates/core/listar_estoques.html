@@ -2,27 +2,57 @@
 <html lang="pt-br">
 <head>
     {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <meta charset="UTF-8">
     <title>Lista de Estoques</title>
 </head>
 <body>
-    <a href="{% url 'home' %}">Voltar ao Menu Inicial</a>
-    <h1>Estoques Existentes</h1>
-    <hr>
+    <header>
+        <h1>Estoques Existentes</h1>
+    </header>
 
-    {% if estoques %}
-        <ul>
-        {% for estoque in estoques %}
-            <li>
-    <a href="{% url 'gerenciar_produtos' estoque.id %}">{{ estoque.nome }}</a>
-    - {{ estoque.data_criacao|date:"d/m/Y H:i" }}
-    <a href="{% url 'apagar_estoque' estoque.id %}" style="color: red;">[Apagar]</a>
-        </li>
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p>Não existem estoques.</p>
-    {% endif %}
+    <main class="estoque-list-container">
+        
+        <div class="menu-action-bar">
+            <a href="{% url 'home' %}" class="back-button">← Voltar ao Menu Inicial</a>
+        </div>
+        
+        <hr>
+
+        {% if estoques %}
+            <div class="estoque-list">
+            {% for estoque in estoques %}
+                
+                <div class="estoque-item">
+                    
+                    <div class="estoque-info">
+                        <h2>{{ estoque.nome }}</h2>
+                        <span class="estoque-date">Criado em: {{ estoque.data_criacao|date:"d/m/Y H:i" }}</span>
+                    </div>
+
+                    <div class="estoque-actions">
+                        <a href="{% url 'gerenciar_produtos' estoque.id %}" class="action-button primary-action">
+                            Gerenciar Produtos
+                        </a>
+                        
+                        <a href="{% url 'apagar_estoque' estoque.id %}" class="action-button danger-action">
+                            Apagar
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        {% else %}
+            <div class="empty-state">
+                <p>Não existem estoques cadastrados.</p>
+                <a href="{% url 'criar_estoque' %}" class="action-button primary-action">Criar Novo Estoque</a>
+            </div>
+        {% endif %}
+    </main>
+
+    <footer>
+        <p>&copy; Sua Aplicação Django</p>
+    </footer>
 </body>
 </html>

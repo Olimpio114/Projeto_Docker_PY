@@ -2,16 +2,36 @@
 <html lang="pt-br">
 <head>
     {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <meta charset="UTF-8">
-    <title>Menu Principal</title>
+    <title>Menu Principal - Gestão de Estoque</title>
 </head>
 <body>
      
-  <h1> Escolha um menu</h1>
-  <hr>
-    <a href="{% url 'listar_estoques' %}">Listar estoques existentes</a><br>
-    <a href="{% url 'criar_estoque' %}">Gerar novo estoque</a><br>
-    <a href="{% url 'gerar_relatorio_geral' %}">Relatório geral</a>
+  <header>
+    <h1>Painel de Gestão de Estoque</h1>
+  </header>
+  
+  <main class="menu-container">
+    <h2>Escolha uma Ação</h2>
+    <hr>
+    
+    <ul class="menu-list">
+        <li>
+            <a href="{% url 'listar_estoques' %}">Listar Estoques Existentes 📋</a>
+        </li>
+        <li>
+            <a href="{% url 'criar_estoque' %}">Gerar Novo Estoque ✨</a>
+        </li>
+        <li>
+            <a href="{% url 'gerar_relatorio_geral' %}">Relatório Geral 📈</a>
+        </li>
+    </ul>
+  </main>
+  
+  <footer>
+    <p>&copy; Sua Aplicação Django</p>
+  </footer>
 </body>
 </html>

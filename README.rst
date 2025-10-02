@@ -150,3 +150,23 @@ Acesse a POC: Abra o navegador e acesse a URL http://localhost:8000/.
 Adicione uma tarefa: Use o formulário na página principal para adicionar uma nova tarefa. A página será recarregada, e a tarefa aparecerá na lista.
 
 Acesse o painel de administração: Vá para http://localhost:8000/admin/ e faça login com o superusuário criado.
+
+
+
+
+
+=================================================================================================
+*Comando e atalhos para teste de Ambientes virtuais
+# ALIASES PARA AMBIENTES DOCKER COMPOSE
+
+# Ambiente DEV (Desenvolvimento Local)
+alias dev:up='docker compose -f docker-compose.yml -f docker-compose.dev.yml up -d --build'
+alias dev:down='docker compose -f docker-compose.yml -f docker-compose.dev.yml down'
+
+# Ambiente HOM (Homologação)
+alias hom:up='docker compose -f docker-compose.yml -f docker-compose.prod.yml -p hom up -d --build'
+alias hom:down='docker compose -f docker-compose.yml -f docker-compose.prod.yml -p hom down'
+
+# Ambiente PROD (Produção Simulado)
+alias prod:up='docker compose -f docker-compose.yml -f docker-compose.prod.yml -p prod up -d --build'
+alias prod:down='docker compose -f docker-compose.yml -f docker-compose.prod.yml -p prod down'

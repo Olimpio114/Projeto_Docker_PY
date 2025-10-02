@@ -31,17 +31,7 @@
     "data_criacao": "2025-09-14T23:15:39.063Z"
   }
 },
-{
-  "model": "core.produto",
-  "pk": 1,
-  "fields": {
-    "estoque": 3,
-    "nome": "CArne moida",
-    "quantidade": 3,
-    "preco_estimado": "25.00",
-    "data_ultima_atualizacao": "2025-09-15T01:06:38.725Z"
-  }
-},
+
 {
   "model": "core.produto",
   "pk": 2,

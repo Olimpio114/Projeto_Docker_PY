@@ -1,0 +1,8 @@
+DB_NAME=postgres
+DB_USER=postgres
+DB_PASSWORD=your_password
+DB_HOST=db
+
+SECRET_KEY=o!a!v2fah!966q8w#@%7)^z_&5-^3=1q^a(jl-w@ixrfork9sf
+
+DB_PASSWORD=w@ixrfork9sf

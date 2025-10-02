@@ -1,50 +1,468 @@
+/* RESET BÁSICO E CONFIGURAÇÕES GLOBAIS */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais moderna */
+    background-color: #eef1f5; /* Cor de fundo mais clara e suave */
     color: #333;
-    margin: 20px;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: flex; /* Flexbox para centralizar o conteúdo principal */
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Ocupa a altura total da viewport */
 }
 
-h1 {
+/* CABEÇALHO (HEADER) */
+header {
+    background-color: #0056b3; /* Cor primária forte */
+    color: white;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+/* CONTAINER PRINCIPAL DO MENU */
+.menu-container {
+    background-color: #ffffff; /* Fundo branco para o container */
+    padding: 30px;
+    margin: 40px 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Sombra mais destacada */
+    width: 90%;
+    max-width: 500px; /* Limita a largura para melhor leitura */
+    text-align: center;
+}
+
+.menu-container h2 {
+    color: #007bff;
+    margin-top: 0;
+    font-weight: 500;
+}
+
+/* LINHA DIVISÓRIA */
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #ccc, rgba(0, 0, 0, 0));
+    margin-bottom: 25px;
+}
+
+/* LISTA DO MENU (UL) */
+.menu-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ITENS DA LISTA (LI) */
+.menu-list li {
+    margin-bottom: 15px;
+}
+
+/* LINKS (A) TRANSFORMADOS EM BOTÕES/CARTÕES */
+.menu-list a {
+    display: block; /* Ocupa a largura total do li */
+    text-decoration: none;
+    background-color: #f8f9fa; /* Fundo do "botão" */
+    color: #333;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: all 0.3s ease; /* Transição suave para hover */
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+/* EFEITO HOVER (AO PASSAR O MOUSE) */
+.menu-list a:hover {
+    background-color: #007bff; /* Cor primária para destaque */
+    color: white; /* Texto branco no hover */
+    border-color: #007bff;
+    transform: translateY(-3px); /* Efeito de elevação sutil */
+    box-shadow: 0 5px 10px rgba(0, 123, 255, 0.3);
+}
+
+/* RODAPÉ (FOOTER) */
+footer {
+    margin-top: auto; /* Empurra o rodapé para baixo */
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    color: #777;
+    font-size: 0.8em;
+    border-top: 1px solid #eee;
+    background-color: #fff;
+}
+/* === ESTILOS ESPECÍFICOS PARA A LISTA DE ESTOQUES === */
+
+/* Container Principal (similar ao menu, mas mais largo) */
+.estoque-list-container {
+    background-color: #ffffff;
+    padding: 30px;
+    margin: 40px 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 900px; /* Mais largo para acomodar a lista */
+}
+
+/* Container para a lista de itens */
+.estoque-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre os cartões */
+}
+
+/* Estilo para cada item/card de estoque */
+.estoque-item {
+    display: flex;
+    justify-content: space-between; /* Alinha info à esquerda e ações à direita */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 15px 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.estoque-item:hover {
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Efeito de elevação no hover */
+}
+
+.estoque-info h2 {
+    margin: 0;
+    font-size: 1.3em;
     color: #0056b3;
 }
 
-a {
-    text-decoration: none;
-    color: #007bff;
+.estoque-date {
+    display: block;
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 5px;
 }
 
-a:hover {
+/* Estilo para a seção de ações (botões) */
+.estoque-actions {
+    display: flex;
+    gap: 10px; /* Espaço entre os botões de ação */
+}
+
+/* Estilo base para todos os botões de ação */
+.action-button {
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95em;
+    text-align: center;
+}
+
+/* Botão de ação primário (Gerenciar Produtos) */
+.primary-action {
+    background-color: #007bff;
+    color: white;
+}
+
+.primary-action:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+/* Botão de ação perigoso (Apagar) */
+.danger-action {
+    background-color: #dc3545;
+    color: white;
+}
+
+.danger-action:hover {
+    background-color: #c82333;
+    transform: translateY(-1px);
+}
+
+/* Estilo para o botão "Voltar" */
+.menu-action-bar {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.back-button {
+    font-size: 1em;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back-button:hover {
+    color: #0056b3;
     text-decoration: underline;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+/* Estado vazio da lista */
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    margin-top: 20px;
 }
 
-li {
-    background: #fff;
-    padding: 10px;
-    margin-bottom: 5px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
+.empty-state p {
+    font-size: 1.1em;
+    color: #555;
 }
 
-input[type="text"], button {
-    padding: 8px;
-    margin-right: 5px;
-    border-radius: 4px;
+/* Ajuste na HR */
+.estoque-list-container hr {
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+/* Media Query: Responsividade para telas pequenas (Ex: celulares) */
+@media (max-width: 600px) {
+    .estoque-item {
+        flex-direction: column; /* Empilha verticalmente em telas pequenas */
+        align-items: flex-start;
+    }
+
+    .estoque-info {
+        margin-bottom: 10px;
+    }
+
+    .estoque-actions {
+        width: 100%;
+        justify-content: space-between; /* Distribui os botões na largura total */
+    }
+
+    .action-button {
+        flex: 1; /* Faz os botões ocuparem espaço igual */
+        padding: 10px 15px;
+    }
+}
+/* === ESTILOS ESPECÍFICOS PARA FORMULÁRIOS === */
+
+/* Container da página (centraliza o card do formulário) */
+.form-page-container {
+    padding: 30px;
+    margin: 40px 20px;
+    width: 90%;
+    max-width: 500px; /* Largura ideal para formulários */
+    text-align: left;
+}
+
+/* Card Principal do Formulário */
+.form-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    margin-top: 20px;
+}
+
+.form-container h2 {
+    color: #007bff;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Grupo de campo (Label + Input) */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Estilização do Input de Texto */
+.form-input {
+    width: 100%;
+    padding: 12px 15px;
     border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-button {
+.form-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Efeito de foco azul */
+    outline: none;
+}
+
+/* Botão de Envio (Reutilizando a classe primary-action) */
+.submit-button {
+    width: 100%; /* Ocupa a largura total do formulário */
+    padding: 12px 0;
+    margin-top: 15px;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+/* === AJUSTES GERAIS PARA FORMULÁRIOS RENDERIZADOS PELO DJANGO (form.as_p) === */
+
+/* Estiliza cada parágrafo (p) gerado por form.as_p */
+.estoque-form p {
+    margin-bottom: 15px;
+}
+
+.estoque-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Estiliza Inputs e Textareas dentro do formulário */
+.estoque-form input[type="text"],
+.estoque-form input[type="number"],
+.estoque-form input[type="date"],
+.estoque-form textarea,
+.estoque-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+/* Margem extra para separar o formulário da lista */
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+/* === ESTILOS PARA TABELA DE PRODUTOS (data-table) === */
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse; /* Remove o espaço entre as bordas */
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden; /* Garante que os cantos arredondados sejam aplicados */
+}
+
+.data-table th, .data-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.data-table th {
     background-color: #007bff;
     color: white;
-    border: none;
-    cursor: pointer;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9em;
 }
 
-button:hover {
-    background-color: #0056b3;
+.data-table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+/* Estilo para o grupo de ações rápidas (+ e -) */
+.action-group {
+    white-space: nowrap; /* Impede que os botões quebrem linha */
+    text-align: center;
+}
+
+.action-btn-quick {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 2px;
+    font-weight: 700;
+    font-size: 1.1em;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+/* Cor secundária para o botão de diminuir */
+.secondary-action {
+    background-color: #6c757d; /* Cinza */
+    color: white;
+}
+
+.secondary-action:hover {
+    background-color: #5a6268;
+}
+
+/* Botão de apagar menor (small) */
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 0.8em;
+}
+
+.empty-state-message {
+    padding: 20px;
+    text-align: center;
+    color: #777;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+
+/* === MEDIA QUERY PARA TABELAS RESPONSIVAS (MOBILE) === */
+@media (max-width: 768px) {
+    /* Esconde cabeçalhos em telas pequenas */
+    .data-table thead {
+        display: none;
+    }
+
+    /* Transforma a linha da tabela em um bloco para parecer um card */
+    .data-table, .data-table tbody, .data-table tr, .data-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .data-table tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+    }
+
+    /* Estiliza cada célula como uma linha de dados */
+    .data-table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border: none;
+    }
+
+    /* Adiciona o rótulo da coluna (Produto, Quantidade) */
+    .data-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        font-weight: 600;
+        color: #0056b3;
+    }
+
+    /* Centraliza o botão de apagar no mobile */
+    .data-table td:last-child {
+        text-align: center;
+    }
 }
