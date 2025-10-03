@@ -1,0 +1,14 @@
+# Arquivo: docker-compose.dev.yml (Configurações para DEV)
+version: '3.8'
+services:
+  web:
+    # Comando de desenvolvimento (usa o manage.py da raiz)
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      # Mapeia o código local para o container (permite hot-reloading)
+      - .:/app 
+    ports:
+      # Expõe a porta para acesso local
+      - "8080:8000" 
+    environment:
+      DJANGO_DEBUG: "True"

@@ -5,7 +5,8 @@ services:
     # Mapeia a porta 8000 do seu computador para a porta 8000 dentro do contêiner.
     # Isso permite que você acesse a aplicação via http://localhost:8000.
     ports:
-      - "8000:8000"
+      #- "8000:8000"
+      - "8081:8000"
     # Cria um volume que sincroniza o diretório local com o diretório /app no contêiner.
     # Alterações no código-fonte são refletidas instantaneamente, sem precisar reconstruir a imagem.
     volumes:

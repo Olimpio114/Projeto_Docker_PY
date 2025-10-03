@@ -1,0 +1,40 @@
+version: '3.8'
+services:
+  # 1. SERVIÇO DE BANCO DE DADOS (DB)
+  db: 
+    image: postgres:15-alpine
+    # REMOVIDA LINHA container_name: hom-db-1 para que o Docker use o prefixo do projeto!
+    env_file:
+      - .env.prod 
+    volumes:
+      # NOVO: Usamos um volume nomeado, que será prefixado com hom_ ou prod_
+      - prod_db_data:/var/lib/postgresql/data 
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # 2. SERVIÇO WEB (WEB)
+  web:
+    ports:
+      - "8081:8000"  
+    build: .
+    command: gunicorn Estoquexcel_Django1409.estoque_app.wsgi:application --bind 0.0.0.0:8000
+    volumes: []
+    environment:
+      DJANGO_DEBUG: "False"
+      DB_HOST: db               
+      DB_PORT: 5432
+      DB_USER: hom_user         
+      DB_PASSWORD: hom_secret_password
+      DB_NAME: hom_db   
+    depends_on:
+      db:
+        condition: service_healthy 
+
+# 3. DEFINIÇÃO DE VOLUMES NA RAIZ
+volumes:
+  # Definimos o volume. O Docker irá chamá-lo de hom_prod_db_data ou prod_prod_db_data.
+  prod_db_data:
+    driver: local

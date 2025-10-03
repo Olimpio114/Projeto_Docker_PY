@@ -20,6 +20,8 @@ pyenv local 3.12.2
 ==============================================================================
 Reconstrua a imagem Docker 
 docker build -t minha-primeira-imagem .
+Aplicar as migrações
+docker compose exec web python manage.py migrate
 
 Execute o contêiner   
 docker run -p 8000:8000 minha-primeira-imagem
@@ -118,6 +120,7 @@ A estrutura da tabela Task foi definida no arquivo poc/models.py
 Os comandos de migração foram executados para traduzir o modelo de dados em uma tabela real no banco de dados PostgreSQL.
 
 docker-compose exec web python manage.py makemigrations poc
+
 docker-compose exec web python manage.py migrate
 
 
@@ -143,7 +146,8 @@ e uma lista para exibi-las.
 Demonstração da POC
 Para demonstrar a aplicação funcional:
 
-Inicie o ambiente: No terminal, execute docker-compose up -d para garantir que o projeto esteja rodando.
+Inicie o ambiente: No terminal, execute 
+docker-compose up -d                    para garantir que o projeto esteja rodando.
 
 Acesse a POC: Abra o navegador e acesse a URL http://localhost:8000/.
 
@@ -151,12 +155,15 @@ Adicione uma tarefa: Use o formulário na página principal para adicionar uma n
 
 Acesse o painel de administração: Vá para http://localhost:8000/admin/ e faça login com o superusuário criado.
 
+resertar senh sdmin django
+(venv) olimpio@olimpio:~/Documentos/Projeto_Docker_PY$ docker compose exec web python manage.py changepassword <nome_do_usuario>
 
 
 
 
 =================================================================================================
-*Comando e atalhos para teste de Ambientes virtuais
+*Comando e atalhos 
+para teste de Ambientes virtuais
 # ALIASES PARA AMBIENTES DOCKER COMPOSE
 
 # Ambiente DEV (Desenvolvimento Local)
@@ -170,3 +177,30 @@ alias hom:down='docker compose -f docker-compose.yml -f docker-compose.prod.yml 
 # Ambiente PROD (Produção Simulado)
 alias prod:up='docker compose -f docker-compose.yml -f docker-compose.prod.yml -p prod up -d --build'
 alias prod:down='docker compose -f docker-compose.yml -f docker-compose.prod.yml -p prod down'
+
+Agora, seus comandos longos se tornaram atalhos muito simples e claros:
+
+Para Subir...	Comando Curto       Para Derrubar...	Comando Curto
+DEV	                 dev:up              DEV	          dev:down
+HOM	                 hom:up              HOM	          hom:down
+PROD	p             rod:up              PROD	           prod:down
+
+ Instalar a extensão: (Depende do seu sistema operacional)
+
+Bash
+
+# Para Ubuntu/Debian
+sudo apt-get install git-flow 
+Iniciar o Git Flow:
+
+git flow init -d                 # O -d usa as configurações padrão
+
+Comandos Simples:
+
+Ação	Comando Curto
+Criar uma Feature	             git flow feature start nome-da-feature
+Finalizar a Feature	             git flow feature finish nome-da-feature
+Criar uma Release	             git flow release start v1.0.0
+Abrir o shell
+
+nano:  nano ~/.bashrc 

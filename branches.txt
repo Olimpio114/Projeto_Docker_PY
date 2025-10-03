@@ -1,0 +1,74 @@
+1. Criar e Entrar no Ambiente HOM (Git develop)
+Vamos garantir que você tenha as branches principais para o seu fluxo.
+
+Bash
+
+# Se o 'main' (ou 'master') for a sua branch principal, volte para ela.
+git checkout main 
+
+# Crie a branch 'develop' (nossa branch de homologação) e entre nela.
+git checkout -b develop
+2. Criar e Entrar na Feature (Git feature/teste)
+Agora você vai criar a branch onde o trabalho acontece (o seu ambiente de DEV).
+
+Bash
+
+# Crie a branch para o seu novo recurso e entre nela.
+git checkout -b feature/nova-pagina-teste
+3. Ação: Alterar o Código (DEV)
+Ação: Edite algum arquivo da sua aplicação (ex: app/views.py ou um template HTML) e adicione um texto que você possa identificar facilmente:
+
+Exemplo de Conteúdo Adicionado: "Estou na FEATURE BRANCH. Aprovado para HOM/PROD?"
+
+Bash
+
+# Salve o arquivo após a edição!
+
+# Adiciona a alteração ao Git
+git add . 
+
+# Confirma a alteração
+git commit -m "feat: Mensagem de teste de feature para promocao"
+4. Promover para HOM e Testar
+Agora, simulamos que o código de DEV está pronto e será mesclado no ambiente de Homologação (develop branch).
+
+Bash
+
+# 1. Volte para a branch 'develop' (destino)
+git checkout develop 
+
+# 2. Mescle o código da sua feature na 'develop'
+git merge feature/nova-pagina-teste
+Teste no Docker (HOM):
+
+Bash
+
+# 3. Suba o ambiente de Homologação (HOM) com o código novo
+hom:up
+Verificação: Vá ao seu navegador (localhost:8081) e confirme que você vê a mensagem "Estou na FEATURE BRANCH..."
+
+(Assumindo que o teste foi um sucesso, derrubamos o ambiente de HOM)
+
+Bash
+
+# 4. Derrube o ambiente HOM
+hom:down 
+5. Promover para PROD e Implantar
+O código foi aprovado. Agora, ele é mesclado para a branch main e sobe para Produção.
+
+Bash
+
+# 1. Volte para a branch 'main' (destino)
+git checkout main 
+
+# 2. Mescle o código aprovado da 'develop' na 'main'
+git merge develop 
+Deploy no Docker (PROD):
+
+Bash
+
+# 3. Suba o ambiente de Produção (PROD) com o código final
+prod:up
+Verificação: Vá ao seu navegador (localhost:8081) novamente e confirme que você ainda vê a mensagem "Estou na FEATURE BRANCH...", mas agora ela está sendo servida pelos contêineres prod-web-1 e utilizando o banco de dados isolado prod_prod_db_data.
+
+O que acontece quando você executa o primeiro passo (git checkout main)?
