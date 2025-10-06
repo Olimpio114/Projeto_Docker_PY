@@ -72,3 +72,17 @@ prod:up
 Verificação: Vá ao seu navegador (localhost:8081) novamente e confirme que você ainda vê a mensagem "Estou na FEATURE BRANCH...", mas agora ela está sendo servida pelos contêineres prod-web-1 e utilizando o banco de dados isolado prod_prod_db_data.
 
 O que acontece quando você executa o primeiro passo (git checkout main)?
+=================================================================
+# 1. Crie a branch principal (PROD), se ainda não existir
+# Se você já tiver 'master' ou 'main', apenas confira.
+git checkout -b main
+
+# 2. Crie a branch de homologação (HOM) e entre nela.
+# Ela se baseia no código limpo da 'main'.
+git checkout -b develop
+
+# 3. Crie sua branch de desenvolvimento (DEV) para o novo recurso
+# Este é o seu ambiente de trabalho local.
+git checkout -b feature/atualizar-cabecalho
+=======================================================================
+Atualizando na branc develop  aqui vamos alterar tudo
