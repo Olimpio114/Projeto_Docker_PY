@@ -245,3 +245,5 @@ prod:up
 docker ps   # conferir container em 8082
 prod:down
 =============================================================================================================
+TEste com correção enviar para homologação .
+obs ja tinha enviado um commit para dev sem correção
