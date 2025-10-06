@@ -159,12 +159,17 @@ resertar senh sdmin django
 (venv) olimpio@olimpio:~/Documentos/Projeto_Docker_PY$ docker compose exec web python manage.py changepassword <nome_do_usuario>
 
 
+=============================================================================================================
+🧩 1️⃣ Criar os atalhos no Bash
+
+Abra o arquivo de configuração do shell:
+
+nano ~/.bashrc
 
 
-=================================================================================================
-*Comando e atalhos 
-para teste de Ambientes virtuais
-# ALIASES PARA AMBIENTES DOCKER COMPOSE
+Adicione ao final do arquivo ⬇️:
+
+# === ALIASES PARA AMBIENTES DOCKER COMPOSE ===
 
 # Ambiente DEV (Desenvolvimento Local)
 alias dev:up='docker compose -f docker-compose.yml -f docker-compose.dev.yml up -d --build'
@@ -178,29 +183,68 @@ alias hom:down='docker compose -f docker-compose.yml -f docker-compose.prod.yml 
 alias prod:up='docker compose -f docker-compose.yml -f docker-compose.prod.yml -p prod up -d --build'
 alias prod:down='docker compose -f docker-compose.yml -f docker-compose.prod.yml -p prod down'
 
-Agora, seus comandos longos se tornaram atalhos muito simples e claros:
 
-Para Subir...	Comando Curto       Para Derrubar...	Comando Curto
-DEV	                 dev:up              DEV	          dev:down
-HOM	                 hom:up              HOM	          hom:down
-PROD	p             rod:up              PROD	           prod:down
+Salve com:
 
- Instalar a extensão: (Depende do seu sistema operacional)
+Ctrl + O → Enter → Ctrl + X
 
-Bash
 
-# Para Ubuntu/Debian
-sudo apt-get install git-flow 
-Iniciar o Git Flow:
+E recarregue as configurações:
 
-git flow init -d                 # O -d usa as configurações padrão
+source ~/.bashrc
 
-Comandos Simples:
+⚡ 2️⃣ Teste rápido dos ambientes
+Ambiente	Porta	Subir	  Derrubar
+DEV	         8080	dev:up	  dev:down
+HOM	         8081	hom:up	  hom:down
+PROD         8082	prod:up	  prod:down
 
-Ação	Comando Curto
-Criar uma Feature	             git flow feature start nome-da-feature
-Finalizar a Feature	             git flow feature finish nome-da-feature
-Criar uma Release	             git flow release start v1.0.0
-Abrir o shell
+💡 Dica: Use docker ps para verificar se os containers estão rodando e suas respectivas portas.
 
-nano:  nano ~/.bashrc 
+🚀 3️⃣ Instalar e Iniciar o Git Flow
+Instalação (Ubuntu/Debian):
+sudo apt-get install git-flow -y
+
+Inicialização (com padrões automáticos):
+git flow init -d
+
+🧱 4️⃣ Comandos Git Flow Rápidos
+Ação	Comando
+Criar uma nova feature	git flow feature start nome-da-feature
+
+Finalizar a feature	git flow feature finish nome-da-feature
+
+Criar uma release	git flow release start v1.0.0
+
+Finalizar a release	git flow release finish v1.0.0
+
+Criar um hotfix (em produção)	git flow hotfix start corrigir-bug
+
+
+🧭 5️⃣ Organização dos Ambientes
+Ambiente	                 Arquivos utilizados	                                Porta sugerida	       Propósito
+DEV	             docker-compose.yml + docker-compose.dev.yml	                    8080	               Desenvolvimento local
+
+HOM	             docker-compose.yml + docker-compose.prod.yml (com -p hom)	        8081            	   Homologação/testes integrados
+
+PROD	         docker-compose.yml + docker-compose.prod.yml (com -p prod)      	8082	               Produção simulada
+
+🧰 6️⃣ Teste de funcionamento
+
+Após recarregar os aliases, teste na sequência:
+
+dev:up
+docker ps   # conferir container em 8080
+dev:down
+
+hom:up
+docker ps   # conferir container em 8081
+hom:down
+
+prod:up
+docker ps   # conferir container em 8082
+prod:down
+=============================================================================================================
+TEste com correção enviar para homologação .
+obs ja tinha enviado um commit para dev sem
+novo teste
